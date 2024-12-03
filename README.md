@@ -67,8 +67,8 @@ This project is licensed under the MIT License.
 
 ## 🧑‍💻 **Author**
 
-👤 **Pranjal Srivastava**
+👨‍💼 **Pranjal Srivastava**
 
--   🌐 [Website](https://yourwebsite.com)
--   💼 [LinkedIn](https://linkedin.com/in/5683-pranjal)
--   📱 [GitHub](https://github.com/pranjal-5683)
+🌐 [Website](https://yourwebsite.com)
+💼 [LinkedIn](https://linkedin.com/in/5683-pranjal)
+📱 [GitHub](https://github.com/pranjal-5683)

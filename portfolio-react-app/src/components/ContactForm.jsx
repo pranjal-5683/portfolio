@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { request } from "../services/axios-helper";
 import Swal from "sweetalert2";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = () => {
     const [contactForm, setContactForm] = useState({
