@@ -32,7 +32,7 @@ const Navbar = () => {
                         {
                             id: "skills",
                             label: "Skills",
-                            svg: projectSvg.skills,
+                            svg: projectSvg.navSkills,
                         },
                         {
                             id: "portfolio",
