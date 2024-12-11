@@ -1,136 +1,76 @@
 import { useEffect, useState } from "react";
 
 const Skills = () => {
-  const [skillsLogoSvg, setSkillsLogoSvg] = useState({});
+    const [skillsLogoSvg, setSkillsLogoSvg] = useState({});
 
-  useEffect(() => {
-    fetch("/svgs/skills-logo.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch SVG data");
-        }
-        return response.json();
-      })
-      .then((data) => setSkillsLogoSvg(data))
-      .catch((error) => console.error("Error fetching SVG:", error));
-  }, []);
+    useEffect(() => {
+        fetch("/svgs/skills-logo.json")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch SVG data");
+                }
+                return response.json();
+            })
+            .then((data) => setSkillsLogoSvg(data))
+            .catch((error) => console.error("Error fetching SVG:", error));
+    }, []);
 
-  if (!Object.keys(skillsLogoSvg).length) {
-    return null;
-  }
+    if (!Object.keys(skillsLogoSvg).length) {
+        return null;
+    }
 
-  return (
-    <section id="skills" className="bg-gray-80 py-10">
-      <div className="container mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-6">Skills</h1>
+    const renderSkillsSection = (category, title) => {
+        if (!skillsLogoSvg[category]) return null;
 
-        {/* Backend Skills */}
-        <div className="flex flex-wrap justify-center">
-          {Object.keys(skillsLogoSvg.backend).map((skillKey, index) => (
-            <div key={index} className="m-4">
-              <img
-                src={skillsLogoSvg.backend[skillKey]}
-                alt={skillKey}
-                width={80}
-                height={80}
-              />
-              <p>{skillKey}</p>
+        return (
+            <div className="grid grid-cols-3 items-start gap-4 mb-8">
+                {/* Left Side - Heading */}
+                <div className="col-span-1 text-right pr-4">
+                    <h2 className="text-xl font-semibold">{title}</h2>
+                </div>
+
+                {/* Right Side - SVG List */}
+                <div className="col-span-2 flex flex-wrap gap-4">
+                    {Object.keys(skillsLogoSvg[category]).map(
+                        (skillKey, index) => (
+                            <div
+                                key={index}
+                                className="group relative text-center hover:cursor-pointer"
+                            >
+                                <img
+                                    src={skillsLogoSvg[category][skillKey]}
+                                    alt={skillKey}
+                                    width={80}
+                                    height={80}
+                                    className="mx-auto"
+                                />
+                                <span className="absolute left-0 right-0 bottom-0 bg-black text-white text-sm opacity-0 group-hover:opacity-100 p-1 rounded">
+                                    {skillKey}
+                                </span>
+                            </div>
+                        )
+                    )}
+                </div>
             </div>
-          ))}
-        </div>
+        );
+    };
 
-        {/* Frontend Skills */}
-        <div className="flex flex-wrap justify-center">
-          {Object.keys(skillsLogoSvg.frontend).map((skillKey, index) => (
-            <div key={index} className="m-4">
-              <img
-                src={skillsLogoSvg.frontend[skillKey]}
-                alt={skillKey}
-                width={80}
-                height={80}
-              />
-              <p>{skillKey}</p>
-            </div>
-          ))}
-        </div>
+    return (
+        <section id="skills" className="py-10 bg-gray-100">
+            <div className="container mx-auto">
+                <h1 className="text-3xl font-bold text-center mb-8">Skills</h1>
 
-        {/* Database Skills */}
-        <div className="flex flex-wrap justify-center">
-          {Object.keys(skillsLogoSvg.database).map((skillKey, index) => (
-            <div key={index} className="m-4">
-              <img
-                src={skillsLogoSvg.database[skillKey]}
-                alt={skillKey}
-                width={80}
-                height={80}
-              />
-              <p>{skillKey}</p>
+                {/* Render each section */}
+                {renderSkillsSection("backend", "Backend Skills")}
+                {renderSkillsSection("frontend", "Frontend Skills")}
+                {renderSkillsSection("database", "Database Skills")}
+                {renderSkillsSection("servers", "Servers")}
+                {renderSkillsSection("message_brokers", "Message Brokers")}
+                {renderSkillsSection("version_control", "Version Control")}
+                {renderSkillsSection("tools", "Tools")}
             </div>
-          ))}
-        </div>
-
-        {/* Servers Skills */}
-        <div className="flex flex-wrap justify-center">
-          {Object.keys(skillsLogoSvg.servers).map((skillKey, index) => (
-            <div key={index} className="m-4">
-              <img
-                src={skillsLogoSvg.servers[skillKey]}
-                alt={skillKey}
-                width={80}
-                height={80}
-              />
-              <p>{skillKey}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Brokers Skills */}
-        <div className="flex flex-wrap justify-center">
-          {Object.keys(skillsLogoSvg.brokers).map((skillKey, index) => (
-            <div key={index} className="m-4">
-              <img
-                src={skillsLogoSvg.brokers[skillKey]}
-                alt={skillKey}
-                width={80}
-                height={80}
-              />
-              <p>{skillKey}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Version Control Skills */}
-        <div className="flex flex-wrap justify-center">
-          {Object.keys(skillsLogoSvg["version-control"]).map((skillKey, index) => (
-            <div key={index} className="m-4">
-              <img
-                src={skillsLogoSvg["version-control"][skillKey]}
-                alt={skillKey}
-                width={80}
-                height={80}
-              />
-              <p>{skillKey}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Tools Skills */}
-        <div className="flex flex-wrap justify-center">
-          {Object.keys(skillsLogoSvg.tools).map((skillKey, index) => (
-            <div key={index} className="m-4">
-              <img
-                src={skillsLogoSvg.tools[skillKey]}
-                alt={skillKey}
-                width={80}
-                height={80}
-              />
-              <p>{skillKey}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default Skills;
