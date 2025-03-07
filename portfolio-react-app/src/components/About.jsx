@@ -3,8 +3,8 @@ import {
     VerticalTimeline,
     VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { ReactComponent as WorkIcon } from "./work.svg";
-import { ReactComponent as EducationIcon } from "./education.svg";
+// import { ReactComponent as WorkIcon } from "./work.svg";
+// import { ReactComponent as EducationIcon } from "./education.svg";
 
 let timelineElements = [
     {
@@ -73,7 +73,7 @@ const About = () => {
                         iconStyle={
                             isWorkIcon ? workIconStyles : educationIconStyles
                         }
-                        icon={isWorkIcon ? <WorkIcon /> : <EducationIcon />}
+                        icon={isWorkIcon ? <span>work icon</span> : <span>education icon</span>}
                     >
                         <h3 className="vertical-timeline-element-title">
                             {element.title}

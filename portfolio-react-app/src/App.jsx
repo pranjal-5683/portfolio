@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Skills from "./components/Skills";
-import Education from "./components/Education";
-import AboutMe from "./components/AboutMe";
-import About from "./components/About";
+import Navbar from "./components/navbar/Navbar";
+import Skills from "./components/skills/Skills";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -32,10 +29,7 @@ function App() {
     return (
         <>
             <Navbar />
-            {/* <Skills />
-            <AboutMe />
-            <Education /> */}
-            <About />
+            <Skills />
         </>
     );
 }
