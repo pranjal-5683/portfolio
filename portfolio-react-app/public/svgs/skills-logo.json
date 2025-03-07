@@ -1,0 +1,46 @@
+{
+    "backend": {
+        "java": "svgs/skills/backend/java.svg",
+        "jee": "svgs/skills/backend/jee.svg",
+        "hibernate": "svgs/skills/backend/hibernate.svg",
+        "spring": "svgs/skills/backend/spring.svg",
+        "spring boot": "svgs/skills/backend/spring-boot.svg",
+        "swagger": "svgs/skills/backend/swagger.svg",
+        "nodejs": "svgs/skills/backend/node-js.svg"
+    },
+    "frontend": {
+        "html": "svgs/skills/frontend/html.svg",
+        "css": "svgs/skills/frontend/css.svg",
+        "bootstrap":"svgs/skills/frontend/bootstrap.svg",
+        "tailwind": "svgs/skills/frontend/tailwind.svg",
+        "javascript": "svgs/skills/frontend/javascript.svg",
+        "jquery": "svgs/skills/frontend/jquery.svg",
+        "react": "svgs/skills/frontend/react.svg",
+        "vite": "svgs/skills/frontend/vitejs.svg"
+    },
+    "database":{
+        "mysql": "svgs/skills/database/mysql.svg",
+        "postgresql": "svgs/skills/database/postgresql.svg",
+        "mongodb": "svgs/skills/database/mongodb.svg"
+    },
+    "servers": {
+        "tomcat": "svgs/skills/servers/tomcat.svg",
+        "jboss": "svgs/skills/servers/jboss.svg"
+    },
+    "message_brokers": {
+        "kafka": "svgs/skills/message_brokers/kafka.svg",
+        "zookeeper": "svgs/skills/message_brokers/ZooKeeper.svg",
+        "redis": "svgs/skills/message_brokers/redis.svg"
+    },
+    "version_control": {
+        "git": "svgs/skills/version_control/git.svg",
+        "github": "svgs/skills/version_control/github.svg",
+        "bitbucket": "svgs/skills/version_control/bitbucket.svg"
+    },
+    "tools": {
+        "eclipse": "svgs/skills/tools/eclipse.svg",
+        "intellij": "svgs/skills/tools/intellij.svg",
+        "vscode": "svgs/skills/tools/vscode.svg",
+        "jira": "svgs/skills/tools/jira.svg"
+    }
+}
